@@ -42,16 +42,17 @@
           <h1>A bit about me...</h1>
         </header>
         <p>
-          I'm a very well-rounded UI developer who knows Photoshop, Illustrator, Typography, HTML5, CSS3, jQuery, JavaScript, WordPress, GitHub, SCRUM, and is in the process of learning Ruby on Rails, Backbone, and Angular.
+          I'm a well-rounded UI developer who knows Photoshop, Illustrator, Typography, HTML5, CSS3, jQuery, JavaScript, WordPress, GitHub, &amp; SCRUM, and I am in the process of learning Ruby on Rails, Backbone, and Angular.
         </p>
         <p>
-          I made the most popular <a href="http://stylus-lang.com" target="_blank">Stylus</a> library on GitHub. It's called <a href="http://jeet.gs" target="_blank">Jeet</a> and it won an <a href="http://www.awwwards.com/web-design-awards/jeet-gs-a-grid-system-for-humans" target="_blank">Awwwards Site of the Day</a> and Microsoft Developer Award. I write for <a href="https://tutsplus.com/authors/cory-simmons" target="_blank">TutsPlus</a>, <a href="http://css-tricks.com/adding-stroke-to-web-text/" target="_blank">CSS Tricks</a>, and <a href="http://www.amazon.com/Instant-Responsive-Design-Cory-Simmons/dp/1849699259" target="_blank">Packt Publishing</a>.
+          I made the most popular <a href="http://stylus-lang.com" target="_blank">Stylus</a> library on GitHub. It's called <a href="http://jeet.gs" target="_blank">Jeet</a>, and it won an <a href="http://www.awwwards.com/web-design-awards/jeet-gs-a-grid-system-for-humans" target="_blank">Awwwards Site of the Day</a> and a Microsoft Developer Award.
         </p>
         <p>
-          I also speak at some pretty big conferences like The <a href="https://futureofwebdesign.com/nyc-2014/speakers/" target="_blank">Future of Web Design</a> Conf in NYC and <a href="http://conf.devworkshop.org/" target="_blank">DevWorkshop</a> Conf in Indianapolis.
+          I write for <a href="https://tutsplus.com/authors/cory-simmons" target="_blank">TutsPlus</a>, <a href="http://css-tricks.com/adding-stroke-to-web-text/" target="_blank">CSS Tricks</a>, and <a href="http://www.amazon.com/Instant-Responsive-Design-Cory-Simmons/dp/1849699259" target="_blank">Packt Publishing</a>.
+          I also speak at some pretty big conferences like the <a href="https://futureofwebdesign.com/nyc-2014/speakers/" target="_blank">Future of Web Design</a> Conference in NYC and <a href="http://conf.devworkshop.org/" target="_blank">DevWorkshop</a> Conference in Indianapolis.
         </p>
         <p>
-          I would love a full-time remote job designing beautiful websites and apps. I think my strength lies in my ability to quickly design and develop responsive prototypes every step of the way.
+          I would love a full-time remote job designing beautiful websites and apps. My strength lies in my ability to quickly design and develop responsive prototypes every step of the way.
         </p>
         <p>
           Thank you for your interest. Be sure to check out my <a href="http://github.com/corysimmons" target="_blank">GitHub</a> account!
@@ -88,14 +89,14 @@
               <h3>MojoTech</h3>
               <h4>Developer</h4>
               <p>
-                February 2014 &mdash; November 2014
+                October 2013 &mdash; August 2014
               </p>
             </header>
             <p>
-              I worked on the <a href="http://teespring.com" target="_blank">Teespring</a> tee-shirt designer app. I was responsible for cleaning up the entire project's codebase and safely migrating the app from Bootstrap 2 to Bootstrap 3 to Foundation.
+              I worked on the <a href="http://teespring.com" target="_blank">Teespring</a> tee-shirt designer app. I was responsible for cleaning up the project's codebase and safely migrating the app from Bootstrap 2 to Bootstrap 3 to Foundation.
             </p>
             <p>
-              While there I had a side project called Jeet which garnered a lot of attention from the web-development community (and has since gone on to become the <a href="https://github.com/search?o=desc&q=stylus&s=stars&type=Repositories&utf8=%E2%9C%93" target="_blank">most popular Stylus framework</a> on GitHub), and won a Site of the Day Awwward.
+              While there, I had a side project called Jeet that garnered a lot of attention from the web-development community (and has since gone on to become the <a href="https://github.com/search?o=desc&q=stylus&s=stars&type=Repositories&utf8=%E2%9C%93" target="_blank">most popular Stylus framework</a> on GitHub) and won a Site of the Day Awwward.
             </p>
           </figcaption>
         </figure>
@@ -105,7 +106,7 @@
 
       <article class="social">
 
-        <h1>It's okay, you can stalk me</h1>
+        <h1>It's okay; you can stalk me</h1>
 
         <a href="https://github.com/corysimmons" target="_blank" title="GitHub">
           <img src="img/github.svg" alt="GitHub">
