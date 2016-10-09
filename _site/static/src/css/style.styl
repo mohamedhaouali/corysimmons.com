@@ -1,0 +1,70 @@
+@import '../../src/css/reeeset/reeeset.min.css'
+@import 'https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700|Lora:400,700';
+
+
+$bp = 800px
+$sm = 15px
+$lg = 30px
+$golden = 1.618
+
+trans($speed = 200ms)
+  transition: all $speed ease-in-out
+
+h1, h2, h3, h4, h5, h6
+  color: #39526C
+  font-family: Lora, Georgia, serif
+  font-weight: 300
+  letter-spacing: -.025em
+  line-height: 1.5
+
+:root
+  margin: $sm
+  color: #B4C0CC
+  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif
+
+  @media (min-width: $bp)
+    margin: $lg
+
+nav
+  display: flex
+  margin-bottom: $sm
+
+  @media (min-width: $bp)
+    margin-bottom: $lg
+
+  > a
+    display: block
+    width: 250px
+    margin-right: auto
+
+  > div
+    display: flex
+    align-items: flex-start
+    margin-left: $sm
+
+    @media (min-width: $bp)
+      margin-left: $lg
+
+    a
+      trans()
+      color: #B4C0CC
+      text-transform: uppercase
+      letter-spacing: .025em
+      font-size: .75rem
+      font-weight: bold
+      text-decoration: none
+      margin-left: $sm
+
+      &:hover
+        color: #39526C
+
+      @media (min-width: $bp)
+        margin-left: $lg
+
+.page-home
+  main
+    generate-grid: sizes(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
+    align-items: flex-start
+
+    > img
+      border-radius: 5%

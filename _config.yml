@@ -1,0 +1,10 @@
+title: corysimmons.com
+email: hello.cory@mailhero.io
+description: A frontend developer's writings.
+baseurl: ''
+url: https://corysimmons.com
+github_username: corysimmons
+markdown: kramdown
+paginate: 1
+paginate_path: /writings/paginate/:num/
+permalink: /writings/:year/:categories/:title

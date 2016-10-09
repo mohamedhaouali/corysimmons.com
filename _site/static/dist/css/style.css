@@ -1,0 +1,83 @@
+@import '../../src/css/reeeset/reeeset.min.css';
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #b4c0cc;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+:root {
+  margin: 15px;
+  color: #39526c;
+  font-family: montserrat, helvetica, arial, sans-serif;
+}
+@media (min-width: 800px) {
+  :root {
+    margin: 30px;
+  }
+}
+nav {
+  display: flex;
+  margin-bottom: 15px;
+}
+@media (min-width: 800px) {
+  nav {
+    margin-bottom: 30px;
+  }
+}
+nav > a {
+  display: block;
+  width: 250px;
+  margin-right: auto;
+}
+nav > div {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 15px;
+}
+@media (min-width: 800px) {
+  nav > div {
+    margin-left: 30px;
+  }
+}
+nav > div a {
+  transition: all 200ms ease-in-out;
+  color: #b4c0cc;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 15px;
+}
+nav > div a:hover {
+  color: #39526c;
+}
+@media (min-width: 800px) {
+  nav > div a {
+    margin-left: 30px;
+  }
+}
+.page-home main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.page-home main > * {
+  margin-right: 60px;
+}
+.page-home main > *:nth-child(2n + 1) {
+  width: calc(99.99% * 1.618/5.853801032000002 - (60px - 60px * 1.618/5.853801032000002));
+}
+.page-home main > *:nth-child(2n + 2) {
+  width: calc(99.99% * 4.235801032000001/5.853801032000002 - (60px - 60px * 4.235801032000001/5.853801032000002));
+  margin-right: 0;
+}
+.page-home main > img {
+  border-radius: 5%;
+}

@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "npm-run-all -p stylus postcss",
+    "stylus": "stylus -w static/src/css/style.styl",
+    "postcss": "postcss -w -u postcss-ant -o static/dist/css/style.css static/src/css/style.css"
+  },
+  "devDependencies": {
+    "npm-run-all": "^3.1.0",
+    "postcss-ant": "^0.1.4",
+    "postcss-cli": "^2.6.0",
+    "stylus": "^0.54.5"
+  },
+  "private": true
+}
