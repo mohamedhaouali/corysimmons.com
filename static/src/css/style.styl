@@ -177,6 +177,12 @@ abbr[title]
     @media (min-width: $bp)
       font-size: 2.25rem
 
+  h3
+    text-align: center
+    @media (min-width: $bp)
+      text-align: initial
+      margin-bottom: 15px
+
   ul
     list-style: none
     display: flex
@@ -189,42 +195,69 @@ abbr[title]
       justify-content: flex-start
 
     li
-      margin: 0 $lg $sm 0
+      margin: ($sm / 2)
+
+      @media (min-width: $bp)
+        margin: 0 $lg $sm 0
 
     a
       &::after
         display: none
-      &::before
-        trans()
-        opacity: 0
-        content: attr(desc)
-        position: absolute
-        left: 50%
-        min-width: 75%
-        transform: translate3d(-50%, -100%, 0)
-        bottom: -100%
-        border-radius: 2px
-        background: lighten($c2, 75%)
-        border: 1px solid lighten($c2, 45%)
-        color: darken($c2, 30%)
-        font-weight: bold
-        text-align: center
-        font-size: 10px
-        line-height: 14px
-        padding: 2px
-      &:hover
+      &[desc]
         &::before
-          opacity: 1
-          transform: translate3d(-50%, 0, 0)
-
-  .jeet
-    max-width: 100px
+          trans()
+          opacity: 0
+          content: attr(desc)
+          position: absolute
+          left: 50%
+          min-width: 75%
+          transform: translate3d(-50%, -100%, 0)
+          bottom: -100%
+          border-radius: 2px
+          background: lighten($c2, 75%)
+          border: 1px solid lighten($c2, 45%)
+          color: darken($c2, 30%)
+          font-weight: bold
+          text-align: center
+          font-size: 10px
+          line-height: 14px
+          padding: 2px
+        &:hover
+          &::before
+            opacity: 1
+            transform: translate3d(-50%, 0, 0)
 
   .lost
     max-width: 120px
+
+  .jeet
+    max-width: 100px
 
   .typographic
     max-width: 120px
 
   .boy
+    max-width: 90px
+
+  .intel
+    max-width: 80px
+
+  .shft
     max-width: 110px
+    background: #222
+
+  .laracasts
+    max-width: 110px
+    opacity: .75
+
+  .scholastic
+    max-width: 130px
+
+  .world-vision
+    width: 120px
+
+  .mojotech
+    width: 70px
+
+  .grist
+    max-width: 80px
