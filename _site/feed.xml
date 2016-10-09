@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>corysimmons.com</title>
-    <description>A frontend developer's writings.</description>
-    <link>https://corysimmons.com/</link>
-    <atom:link href="https://corysimmons.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 Oct 2016 20:49:12 -0400</pubDate>
-    <lastBuildDate>Sat, 08 Oct 2016 20:49:12 -0400</lastBuildDate>
+    <title>Cory Simmons</title>
+    <description>A frontend developer's portfolio and writings.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 09 Oct 2016 00:39:57 -0400</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 00:39:57 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>&lt;h1&gt;second post&lt;/h1&gt;
 </description>
         <pubDate>Thu, 06 Oct 2016 00:00:00 -0400</pubDate>
-        <link>https://corysimmons.com/writings/2016/second-post</link>
-        <guid isPermaLink="true">https://corysimmons.com/writings/2016/second-post</guid>
+        <link>http://localhost:4000/writings/2016/second-post</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/second-post</guid>
         
         
       </item>
@@ -25,8 +25,8 @@
         <description>&lt;h1&gt;first post&lt;/h1&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 00:00:00 -0400</pubDate>
-        <link>https://corysimmons.com/writings/2016/javascript/first-post</link>
-        <guid isPermaLink="true">https://corysimmons.com/writings/2016/javascript/first-post</guid>
+        <link>http://localhost:4000/writings/2016/javascript/first-post</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/first-post</guid>
         
         
         <category>javascript</category>
