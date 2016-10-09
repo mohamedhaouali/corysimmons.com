@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Cory Simmons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/dist/css/style.css">
+    <link rel="stylesheet" href="/static/dist/css/style.min.css">
   </head>
   <body>
     <!--[if IE]>
@@ -26,7 +26,12 @@
 
 
 <main>
-  <img src="static/src/img/cory-simmons.png" alt="Picture of Cory. 6 foot 2 inches, light-brown hair, blue eyes, black thick-framed glasses, black North Face windbreaker jacket, jeans. Bookshelf full of random books behind him.">
+  <picture>
+    <source srcset="static/dist/img/cory-simmons-1000@1.5x.png" media="(min-width: 1000px) and (min-device-pixel-ratio: 1.5), (min-width: 1000px) and (min-resolution: 144dpi)">
+    <source srcset="static/dist/img/cory-simmons-1000.png" media="(min-width: 1000px)">
+    <source srcset="static/dist/img/cory-simmons-500@1.5x.png" media="(min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)">
+    <img src="static/dist/img/cory-simmons-500.png" alt="Picture of Cory. 6 foot 2 inches, light-brown hair, blue eyes, black thick-framed glasses, black North Face windbreaker jacket, jeans. Bookshelf full of random books behind him.">
+  </picture>
 
   <div>
     <h1>
@@ -38,9 +43,33 @@
       Almost all the articles were written in that same day using GitHub's built-in editor to paste screenshots.
     </p>
 
-    <p>
-      What do I know?
-    </p>
+    <h3>What have I built?</h3>
+
+    <ul>
+      <li>
+        <a href="http://jeet.gs/" target="_blank" desc="2,800 Stars">
+          <img src="static/dist/img/jeet-logo.svg" alt="Jeet grid system logo. 4 circles of varying bright colors with the word Jeet to the right." class="jeet">
+        </a>
+      </li>
+
+      <li>
+        <a href="http://lostgrid.org" target="_blank" desc="3,100 Stars">
+          <img src="static/dist/img/lost-logo.svg" alt="Lost grid logo. A map with a dotted line and an x-marks-the-spot." class="lost">
+        </a>
+      </li>
+
+      <li>
+        <a href="https://corysimmons.github.io/typographic" target="_blank" desc="650 Stars">
+          <img src="static/dist/img/typographic-logo.svg" alt="Typographic logo. A piece of paper with two ampersands next to each other. The one on the right is smaller and has no filled, but a dotted outline." class="typographic">
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/corysimmons/boy" target="_blank" desc="500 Stars">
+          <img src="static/dist/img/boy-logo.svg" alt="Boy logo. A boy standing on top of hand-drawn letters waving." class="boy">
+        </a>
+      </li>
+    </ul>
   </div>
 </main>
 

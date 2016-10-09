@@ -1,14 +1,23 @@
 {
   "scripts": {
-    "start": "npm-run-all -p jekyll stylus postcss browser-sync",
+    "start": "npm-run-all -p jekyll stylus postcss browser-sync chokidar:images chokidar:cssnano",
+    "chokidar:images": "chokidar 'static/src/img/**/*' -c 'npm run imagemin'",
+    "imagemin": "imagemin static/src/img/**/* -o static/dist/img",
     "jekyll": "jekyll serve",
     "browser-sync": "browser-sync start -p localhost:4000 --files='_site/**/*' --no-notify --no-open",
     "stylus": "stylus -w static/src/css/style.styl",
-    "postcss": "postcss -w -u postcss-ant -o static/dist/css/style.css static/src/css/style.css"
+    "postcss": "postcss -w -u postcss-ant -u autoprefixer -o static/dist/css/style.css static/src/css/style.css",
+    "chokidar:cssnano": "chokidar 'static/dist/css/style.css' -c 'npm run cssnano'",
+    "cssnano": "cssnano static/dist/css/style.css static/dist/css/style.min.css"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.0",
     "browser-sync": "^2.17.1",
+    "chokidar-cli": "^1.2.0",
+    "cssnano-cli": "^1.0.5",
+    "imagemin-cli": "^3.0.0",
     "npm-run-all": "^3.1.0",
+    "picturefill": "^3.0.2",
     "postcss-ant": "^0.1.4",
     "postcss-cli": "^2.6.0",
     "stylus": "^0.54.5"

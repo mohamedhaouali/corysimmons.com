@@ -29,9 +29,12 @@ main
       bottom: -1px
       height: 2px
       background: linear-gradient(to right, white, lighten(#A2F8C5, 10%), lighten(#8FCDF2, 40%), lighten(#96C9D3, 20%), lighten(#A2F8C5, 20%), white)
+      max-width: 100%
     &:hover
       &::after
-        opacity: .25
+        opacity: .5
+        max-width: 50%
+        transform: translate3d(50%, 0, 0)
 
 
 h1, h2, h3, h4, h5, h6
@@ -45,6 +48,12 @@ h1, h2, h3, h4, h5, h6
   @media (min-width: $bp)
     line-height: 1.3333333
 
+  ~ h1, ~ h2, ~ h3, ~ h4, ~ h5, ~ h6
+    margin-top: $sm
+
+    @media (min-width: $bp)
+      margin-top: $lg
+
 :root
   margin: $sm
   color: $c2
@@ -52,10 +61,15 @@ h1, h2, h3, h4, h5, h6
   line-height: 1.666666
   overflow-y: scroll
   font-size: 14px
+  -webkit-font-smoothing: antialiased
 
   @media (min-width: $bp)
     margin: $lg
     font-size: 18px
+
+body
+  max-width: 1440px
+  margin: auto
 
 nav
   margin-bottom: $sm
@@ -90,9 +104,7 @@ nav
       background: lighten($c2, 80%)
       display: block
       margin-bottom: 2px
-
-      &:hover
-        color: $c1
+      color: $c1
 
       @media (min-width: $bp)
         background: none
@@ -104,17 +116,8 @@ nav
         letter-spacing: .025em
         font-weight: bold
 
-.page-home
-  main
-    @media (min-width: $bp)
-      generate-grid: sizes(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
-      align-items: flex-start
-
-    > img
-      border-radius: 1px
-
-    > *
-      margin-bottom: $sm
+        &:hover
+          color: $c1
 
 abbr[title]
   text-decoration: none
@@ -152,3 +155,76 @@ abbr[title]
       letter-spacing: .25em
       color: $c2
       font-size: .85rem
+
+// Home
+.page-home
+  main
+    @media (min-width: $bp)
+      generate-grid: sizes(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
+      align-items: flex-start
+
+    > picture
+      display: block
+
+      > img
+        border-radius: 1px
+
+    > *
+      margin-bottom: $sm
+
+  h1
+    font-size: 2rem
+    @media (min-width: $bp)
+      font-size: 2.25rem
+
+  ul
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    max-width: 100%
+
+    @media (min-width: $bp)
+      justify-content: flex-start
+
+    li
+      margin: 0 $lg $sm 0
+
+    a
+      &::after
+        display: none
+      &::before
+        trans()
+        opacity: 0
+        content: attr(desc)
+        position: absolute
+        left: 50%
+        min-width: 75%
+        transform: translate3d(-50%, -100%, 0)
+        bottom: -100%
+        border-radius: 2px
+        background: lighten($c2, 75%)
+        border: 1px solid lighten($c2, 45%)
+        color: darken($c2, 30%)
+        font-weight: bold
+        text-align: center
+        font-size: 10px
+        line-height: 14px
+        padding: 2px
+      &:hover
+        &::before
+          opacity: 1
+          transform: translate3d(-50%, 0, 0)
+
+  .jeet
+    max-width: 100px
+
+  .lost
+    max-width: 120px
+
+  .typographic
+    max-width: 120px
+
+  .boy
+    max-width: 110px
