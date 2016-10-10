@@ -13,10 +13,11 @@ main a::after {
   width: 100%;
   left: 0;
   bottom: -1px;
-  height: 2px;
-  background: -webkit-linear-gradient(left, #fff, #abf9cb, #bce1f7, #abd4dc, #b5f9d1, #fff);
-  background: linear-gradient(to right, #fff, #abf9cb, #bce1f7, #abd4dc, #b5f9d1, #fff);
+  height: 0.075em;
+  background: -webkit-linear-gradient(left, #fff, #abf9cb, #bce1f7, #d5e9ed, #b5f9d1, #fff);
+  background: linear-gradient(to right, #fff, #abf9cb, #bce1f7, #d5e9ed, #b5f9d1, #fff);
   max-width: 100%;
+  z-index: -1;
 }
 main a:hover::after {
   opacity: 0.5;
@@ -47,83 +48,8 @@ h6 {
     line-height: 1.3333333;
   }
 }
-h1 ~ h1,
-h2 ~ h1,
-h3 ~ h1,
-h4 ~ h1,
-h5 ~ h1,
-h6 ~ h1,
-h1 ~ h2,
-h2 ~ h2,
-h3 ~ h2,
-h4 ~ h2,
-h5 ~ h2,
-h6 ~ h2,
-h1 ~ h3,
-h2 ~ h3,
-h3 ~ h3,
-h4 ~ h3,
-h5 ~ h3,
-h6 ~ h3,
-h1 ~ h4,
-h2 ~ h4,
-h3 ~ h4,
-h4 ~ h4,
-h5 ~ h4,
-h6 ~ h4,
-h1 ~ h5,
-h2 ~ h5,
-h3 ~ h5,
-h4 ~ h5,
-h5 ~ h5,
-h6 ~ h5,
-h1 ~ h6,
-h2 ~ h6,
-h3 ~ h6,
-h4 ~ h6,
-h5 ~ h6,
-h6 ~ h6 {
-  margin-top: 30px;
-}
-@media (min-width: 800px) {
-  h1 ~ h1,
-  h2 ~ h1,
-  h3 ~ h1,
-  h4 ~ h1,
-  h5 ~ h1,
-  h6 ~ h1,
-  h1 ~ h2,
-  h2 ~ h2,
-  h3 ~ h2,
-  h4 ~ h2,
-  h5 ~ h2,
-  h6 ~ h2,
-  h1 ~ h3,
-  h2 ~ h3,
-  h3 ~ h3,
-  h4 ~ h3,
-  h5 ~ h3,
-  h6 ~ h3,
-  h1 ~ h4,
-  h2 ~ h4,
-  h3 ~ h4,
-  h4 ~ h4,
-  h5 ~ h4,
-  h6 ~ h4,
-  h1 ~ h5,
-  h2 ~ h5,
-  h3 ~ h5,
-  h4 ~ h5,
-  h5 ~ h5,
-  h6 ~ h5,
-  h1 ~ h6,
-  h2 ~ h6,
-  h3 ~ h6,
-  h4 ~ h6,
-  h5 ~ h6,
-  h6 ~ h6 {
-    margin-top: 60px;
-  }
+p:last-of-type {
+  margin-bottom: 1em;
 }
 :root {
   margin: 30px;
@@ -378,14 +304,106 @@ abbr[title]::after {
   opacity: 0.75;
 }
 .page-home .scholastic {
-  max-width: 130px;
+  max-width: 120px;
 }
 .page-home .world-vision {
-  width: 120px;
+  width: 100px;
 }
 .page-home .mojotech {
-  width: 70px;
+  width: 60px;
 }
 .page-home .grist {
-  max-width: 80px;
+  max-width: 60px;
+}
+.page-home ul {
+  margin-bottom: 0;
+}
+.page-home .uses-work {
+  margin-bottom: 15px;
+}
+.page-home .worked-with {
+  padding-bottom: 30px;
+}
+.page-home .worked-with h3 {
+  margin-bottom: 30px;
+}
+.page-home .built,
+.page-home .uses-work,
+.page-home .worked-with,
+.page-home .written-for,
+.page-home .what-i-know {
+  border-top: 1px solid #e8ecf0;
+  padding-top: 60px;
+}
+.page-home .written-for h3 {
+  margin-bottom: 30px;
+}
+.page-home .tutsplus {
+  background: #2e4256;
+  border-radius: 3px;
+  padding: 5px 8px;
+  max-width: 110px;
+}
+.page-home .css-tricks {
+  max-width: 110px;
+}
+.page-home .packt {
+  height: 30px;
+}
+.page-home .net-mag {
+  max-width: 70px;
+}
+.page-home .intro {
+  margin-bottom: 60px;
+}
+.page-home .what-i-know {
+  padding-bottom: 30px;
+}
+.page-home .what-i-know h3 {
+  margin-bottom: 30px;
+}
+.page-home .what-i-know h4 {
+  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 5px;
+}
+.page-home .what-i-know p {
+  font-size: 0.75rem;
+}
+.page-home progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.page-home progress[value]::-webkit-progress-value {
+  background: #39526c;
+}
+.page-home progress[value]::-webkit-progress-bar {
+  background: #b4c0cc;
+}
+@media (min-width: 800px) {
+  .page-home .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .page-home .skills > * {
+    margin-right: 60px;
+  }
+  .page-home .skills > *:nth-child(2n + 1) {
+    width: calc(99.99% * 0.5 - (60px - 60px * 0.5));
+  }
+  .page-home .skills > *:nth-child(2n + 2) {
+    width: calc(99.99% * 0.5 - (60px - 60px * 0.5));
+    margin-right: 0;
+  }
+}
+.page-home .skill p:last-of-type {
+  margin-bottom: 30px;
 }
