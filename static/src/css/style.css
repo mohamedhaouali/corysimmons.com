@@ -1,11 +1,13 @@
 @import '../../src/css/reeeset/reeeset.min.css';
 @import 'https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700|Lora:400,700';
-main a {
+main a,
+.post a {
   color: #517499;
   text-decoration: none;
   position: relative;
 }
-main a::after {
+main a::after,
+.post a::after {
   transition: all 200ms ease-in-out;
   content: '';
   position: absolute;
@@ -17,7 +19,8 @@ main a::after {
   max-width: 100%;
   z-index: -1;
 }
-main a:hover::after {
+main a:hover::after,
+.post a:hover::after {
   opacity: 0.5;
   max-width: 50%;
   transform: translate3d(50%, 0, 0);
@@ -53,6 +56,7 @@ p:last-of-type {
   color: #b4c0cc;
   font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
   line-height: 1.666666;
+  overflow-x: hidden;
   overflow-y: scroll;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -107,6 +111,12 @@ nav > div > a {
   display: block;
   margin-bottom: 2px;
   color: #39526c;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+nav > div > a:hover,
+nav > div > a:active {
+  background: #e8ecf0;
 }
 @media (min-width: 800px) {
   nav > div > a {
@@ -116,11 +126,13 @@ nav > div > a {
     font-size: 0.75rem;
     color: #b4c0cc;
     text-transform: uppercase;
-    letter-spacing: 0.025em;
-    font-weight: bold;
   }
   nav > div > a:hover {
     color: #39526c;
+  }
+  nav > div > a:hover,
+  nav > div > a:active {
+    background: none;
   }
 }
 abbr[title] {
@@ -142,7 +154,7 @@ abbr[title]::after {
 }
 @media (min-width: 800px) {
   .logo {
-    min-width: 300px;
+    min-width: 330px;
     margin: -15px 0 0;
   }
 }
@@ -352,4 +364,122 @@ abbr[title]::after {
 }
 .page-home .skill p:last-of-type {
   margin-bottom: 30px;
+}
+.page-writings p:first-of-type {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.page-writings h2 {
+  margin-bottom: 60px;
+}
+.page-writings h2 a {
+  margin-top: 60px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #39526c;
+}
+.page-writings h2 .date {
+  display: block;
+  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-size: 0.85rem;
+  font-weight: normal;
+  letter-spacing: 0.015em;
+}
+.page-writings .pagination {
+  float: left;
+  margin-top: 60px;
+}
+.page-writings .pagination .next,
+.page-writings .pagination .previous {
+  transition: all 200ms ease-in-out;
+  border: 2px solid rgba(180,192,204,0.3);
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+  color: #39526c;
+}
+.page-writings .pagination .next:hover,
+.page-writings .pagination .previous:hover {
+  border-color: rgba(180,192,204,0.45);
+  background: rgba(180,192,204,0.03);
+}
+.page-writings .pagination .previous {
+  margin-right: 30px;
+}
+.post {
+  padding-bottom: calc(50vh - 1.666666em - 60px);
+  color: #39526c;
+}
+.post h1 {
+  margin-top: 30px;
+  float: left;
+}
+.post > *:not(h1) {
+  margin-bottom: 1.666666em;
+}
+.post footer {
+  margin-top: 60px;
+}
+.post footer p {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+.post footer p > span {
+  display: block;
+  font-size: 1.75rem;
+  margin-left: 30px;
+  margin-top: -10px;
+  font-weight: bold;
+}
+.post footer p > span > span {
+  display: block;
+  font-size: 0.85rem;
+}
+.post-date {
+  color: #b4c0cc;
+  width: 100%;
+  clear: both;
+  position: relative;
+  top: -20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 30px;
+}
+@media (min-width: 800px) {
+  .post-date {
+    margin-bottom: 60px;
+  }
+}
+ol,
+ul {
+  list-style-position: inside;
+}
+pre,
+code {
+  background: #fafafa;
+  border: 1px solid #f2f2f2;
+  padding: 2px;
+  overflow-x: auto;
+}
+pre {
+  padding: 15px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+@media (min-width: 800px) {
+  pre {
+    padding: 30px;
+  }
+}
+pre code {
+  background: none;
+  border: none;
+  padding: none;
+  overflow-x: hidden;
 }

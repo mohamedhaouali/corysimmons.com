@@ -5,28 +5,110 @@
     <description>A frontend developer's portfolio and writings.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Oct 2016 15:16:08 -0400</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2016 15:16:08 -0400</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2016 05:53:03 -0400</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2016 05:53:03 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
-        <title>second post</title>
-        <description>&lt;h1&gt;second post&lt;/h1&gt;
+        <title>Building a Simple Typechecker</title>
+        <description>&lt;p&gt;Type-checking is pretty sweet and helps prevent lots of hard-to-find bugs. If you’re using &lt;a href=&quot;/writings/2016/javascript/default-named-parameter-functions-for-everything&quot;&gt;default named params&lt;/a&gt; for all your functions, it’s fairly easy to integrate some simple type-checking.&lt;/p&gt;
+
+&lt;p&gt;A real-world example might make this more clear!&lt;/p&gt;
+
+&lt;p&gt;Frankenstein (the doctor – not the monster) has some cats. Some of them have less legs than they are supposed to have. He can add more legs, but he developed some compulsive disorder and can only add legs if he’s allowed to double them. As @mpjme would say, this is the kind of problem you encounter every day in Enterprise-level Coding™.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;typeCheck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argsObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argsObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Comparing the arguments to the type interface.&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TypeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argsObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;should&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Type interface&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kittenTyping&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;nickname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'string'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;frankenKitten&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nickname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Hops'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;typeCheck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kittenTyping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nickname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// interface, argsObj&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sewing&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sounds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;🙀&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;Now&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nickname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;😻`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Lets saw a leg off so Hops ends up with a normal amount of legs (4), then let's rename him Skip.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;frankenKitten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nickname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Skip'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// TypeError: 2 should be a number type!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;frankenKitten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Ah, that's better!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we’re catching type bugs that otherwise would’ve leaked through since clever JavaScript will “intelligently” (aka: magically) convert that &lt;code class=&quot;highlighter-rouge&quot;&gt;'2'&lt;/code&gt; string into a number during the multiplication step.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Protip:&lt;/strong&gt; Place &lt;code class=&quot;highlighter-rouge&quot;&gt;typeCheck()&lt;/code&gt; right above &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; statements to help prevent bugs. If you encounter a bug, just add &lt;code class=&quot;highlighter-rouge&quot;&gt;typeCheck()&lt;/code&gt;s higher and higher in your code until you find the culprit (then clean up after yourself except for that one right above your &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;). Psst, the culprit usually looks like &lt;code class=&quot;highlighter-rouge&quot;&gt;Object.&amp;lt;anonymous&amp;gt;&lt;/code&gt; in the terminal stack trace.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This isn’t great because it requires us to pass all the interface params to &lt;code class=&quot;highlighter-rouge&quot;&gt;argsObj&lt;/code&gt; whether we’re using them or not.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Hops is still a good name!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;frankenKitten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;typeCheck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kittenTyping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Error! We always need to pass whatever params match in the function defaults and the interface.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;typeCheck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kittenTyping&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nickname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Works, but smells a bit.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m sure there’s some clever way to capture deconstructed variables without having to explicitly pass &lt;em&gt;all&lt;/em&gt; of them within &lt;code class=&quot;highlighter-rouge&quot;&gt;typeCheck()&lt;/code&gt;, but tbh, this solution isn’t as nice as existing tools and I’m getting hungry.&lt;/p&gt;
+
+&lt;p&gt;It &lt;strong&gt;is&lt;/strong&gt;, however, a pretty good way to start sneaking basic type-checking into stuff without introducing any dependencies.&lt;/p&gt;
+
+&lt;p&gt;It also educates and promotes the discussion of integrating one of those more feature-rich solutions. Coworkers should begin to see the value in type-checking, but probably feel kind of gross about all the &lt;code class=&quot;highlighter-rouge&quot;&gt;typeCheck()&lt;/code&gt; functions littering your code, or they’ll want to typecheck arrays and such…&lt;/p&gt;
+
+&lt;p&gt;That’s the &lt;em&gt;purrfect&lt;/em&gt; time to sell something like Flow/TypeScript/Elm. 😽&lt;/p&gt;
 </description>
-        <pubDate>Thu, 06 Oct 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/writings/2016/second-post</link>
-        <guid isPermaLink="true">http://localhost:4000/writings/2016/second-post</guid>
+        <pubDate>Wed, 12 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2016/building-a-simple-typechecker</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/building-a-simple-typechecker</guid>
         
         
       </item>
     
       <item>
-        <title>first post</title>
-        <description>&lt;h1&gt;first post&lt;/h1&gt;
+        <title>Default Named Parameter Functions for Everything</title>
+        <description>&lt;p&gt;I’m starting to wonder if we should just use named params for everything. They provide a lot of flexibility with no side-effects that I know of.&lt;/p&gt;
+
+&lt;p&gt;Here’s how you do it:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nb&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a: 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// b: 2&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a: 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// b: 3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We don’t have to pass any smelly stuff like &lt;code class=&quot;highlighter-rouge&quot;&gt;foo(undefined, 3)&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Our parameter is more descriptive.&lt;/li&gt;
+  &lt;li&gt;Our parameter is more flexible because it’s not bound to any order-of-appearance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Equal sign when setting defaults. Colon to assign when calling.&lt;/p&gt;
+
+&lt;p&gt;Yes, now you have to at least pass an empty object to your functions, and yes, we’re forcing people to pass objects at all times, but there’s probably an argument to be made about objects being more flexible anyway, and all-in-all, these are small prices to pay for how nice default arguments and named params are.&lt;/p&gt;
+
+&lt;p&gt;Named params have always been one of my favorite features of a language. JS doesn’t seem to support a super-clean (still have to pass these as objects) way to do this, but at least now we can do it somewhat elegantly.&lt;/p&gt;
+
+&lt;p&gt;Now… if only there was a way to type-check those params…&lt;/p&gt;
 </description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/writings/2016/javascript/first-post</link>
-        <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/first-post</guid>
+        <pubDate>Tue, 11 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2016/javascript/default-named-parameter-functions-for-everything</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/default-named-parameter-functions-for-everything</guid>
         
         
         <category>javascript</category>

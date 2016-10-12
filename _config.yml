@@ -6,6 +6,7 @@ baseurl: ''
 url: https://corysimmons.com
 github_username: corysimmons
 markdown: kramdown
-paginate: 1
+paginate: 10
 paginate_path: /writings/paginate/:num/
 permalink: /writings/:year/:categories/:title
+highlighter: rouge

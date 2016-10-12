@@ -15,7 +15,7 @@ $stack2 = Lora, Georgia, serif
 trans($speed = 200ms)
   transition: all $speed ease-in-out
 
-main
+main, .post
   a
     color: lighten($c1, 20%)
     text-decoration: none
@@ -57,6 +57,7 @@ p:last-of-type
   color: $c2
   font-family: $stack1
   line-height: 1.666666
+  overflow-x: hidden
   overflow-y: scroll
   font-size: 14px
   -webkit-font-smoothing: antialiased
@@ -103,6 +104,10 @@ nav
       display: block
       margin-bottom: 2px
       color: $c1
+      font-weight: bold
+      letter-spacing: .025em
+      &:hover, &:active
+        background: lighten($c2, 70%)
 
       @media (min-width: $bp)
         background: none
@@ -111,11 +116,12 @@ nav
         font-size: .75rem
         color: $c2
         text-transform: uppercase
-        letter-spacing: .025em
-        font-weight: bold
 
         &:hover
           color: $c1
+
+        &:hover, &:active
+          background: none
 
 abbr[title]
   text-decoration: none
@@ -134,7 +140,7 @@ abbr[title]
   margin: auto
 
   @media (min-width: $bp)
-    min-width: 300px
+    min-width: 330px
     margin: -15px 0 0
 
   > span
@@ -333,3 +339,110 @@ abbr[title]
     p
       &:last-of-type
         margin-bottom: $sm
+
+.page-writings
+  p
+    &:first-of-type
+      margin-top: $lg
+      margin-bottom: $lg
+
+  h2
+    margin-bottom: $lg
+
+    a
+      margin-top: $lg
+      text-decoration: none
+      font-size: 1.5rem
+      color: $c1
+
+    .date
+      display: block
+      font-family: $stack1
+      font-size: .85rem
+      font-weight: normal
+      letter-spacing: .015em
+
+  .pagination
+    float: left
+    margin-top: $lg
+
+    .next,
+    .previous
+      trans()
+      border: 2px solid rgba($c2, 30%)
+      padding: 10px 30px
+      text-decoration: none
+      border-radius: 2px
+      font-size: .85rem
+      font-weight: bold
+      letter-spacing: .025em
+      color: $c1
+
+      &:hover
+        border-color: rgba($c2, 45%)
+        background: rgba($c2, 3%)
+
+    .previous
+      margin-right: $sm
+
+.post
+  padding-bottom: calc(50vh - 1.666666em - 60px)
+  color: $c1
+  h1
+    margin-top: $sm
+    float: left
+  > *:not(h1)
+    margin-bottom: 1.666666em
+
+  footer
+    margin-top: $lg
+    p
+      display: flex
+      align-items: center
+      font-size: 3rem
+      > span
+        display: block
+        font-size: 1.75rem
+        margin-left: $sm
+        margin-top: -10px
+        font-weight: bold
+        > span
+          display: block
+          font-size: .85rem
+
+.post-date
+  color: $c2
+  width: 100%
+  clear: both
+  position: relative
+  top: -($sm / 1.5)
+  text-transform: uppercase
+  font-weight: bold
+  font-size: .75rem
+  letter-spacing: .25em
+  margin-bottom: $sm
+
+  @media (min-width: $bp)
+    margin-bottom: $lg
+
+ol, ul
+  list-style-position: inside
+
+pre,
+code
+  background: darken(white, 2%)
+  border: 1px solid darken(white, 5%)
+  padding: 2px
+  overflow-x: auto
+
+pre
+  padding: ($sm / 2)
+  @media (min-width: $bp)
+    padding: ($lg / 2)
+  overflow-x: auto
+  font-size: .85rem
+  code
+    background: none
+    border: none
+    padding: none
+    overflow-x: hidden
