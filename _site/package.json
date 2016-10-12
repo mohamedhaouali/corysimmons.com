@@ -22,5 +22,6 @@
     "postcss-cli": "^2.6.0",
     "stylus": "^0.54.5"
   },
-  "private": true
+  "private": true,
+  "dependencies": {}
 }
