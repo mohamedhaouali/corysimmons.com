@@ -5,8 +5,8 @@
     <description>A frontend developer's portfolio and writings.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Oct 2016 19:33:30 -0400</pubDate>
-    <lastBuildDate>Wed, 12 Oct 2016 19:33:30 -0400</lastBuildDate>
+    <pubDate>Sat, 15 Oct 2016 04:37:13 -0400</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2016 04:37:13 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -109,6 +109,111 @@
         <pubDate>Tue, 11 Oct 2016 00:00:00 -0400</pubDate>
         <link>http://localhost:4000/writings/2016/javascript/default-named-parameter-functions-for-everything</link>
         <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/default-named-parameter-functions-for-everything</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Babel</title>
+        <description>&lt;p&gt;There are new versions of Javascript (ES6, ES7) full of &lt;a href=&quot;https://babeljs.io/docs/learn-es2015/&quot;&gt;new features&lt;/a&gt; and a ton of syntax shortcuts. For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;…is shorthand for an anonymous function that returns 2.&lt;/p&gt;
+
+&lt;p&gt;As with everything in programming, people can’t agree on anything and browsers are slow to implement stuff. We’d have jetpacks before browsers implemented it correctly/consistently so some cool people made some things called “transpilers” that convert ES6+ to usable old-fashioned Javascript (ES5). The most popular one is Babel.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://babeljs.io/repl/#?evaluate=true&amp;amp;lineWrap=false&amp;amp;presets=es2015%2Creact%2Cstage-2&amp;amp;code=()%20%3D%3E%0A%20%202&quot;&gt;Here’s&lt;/a&gt; what it converts the above code to.&lt;/p&gt;
+
+&lt;p&gt;Babel works with just about &lt;a href=&quot;https://babeljs.io/docs/setup/&quot;&gt;any build process&lt;/a&gt;, and is extendable with &lt;a href=&quot;https://babeljs.io/docs/plugins/&quot;&gt;modular plugins&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-it&quot;&gt;How to use it&lt;/h2&gt;
+
+&lt;p&gt;The easiest/cleanest way is installing some npm packages and configuring it in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. We’ll make an npm script for it so we can run something like &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt; from the terminal.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/playground/babel&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo '{}' &amp;gt; package.json&lt;/code&gt; (create a valid JSON file so we can &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; to it)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -D babel-cli babel-preset-es2015 babel-preset-stage-0&lt;/code&gt; (this will install Babel’s CLI, ES6 (aka: ES2015), and ES7 support)&lt;/li&gt;
+  &lt;li&gt;Add a &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;babel&quot;&lt;/code&gt; object to &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Inside it we’ll tell it to use the presets we installed:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;babel&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stage-0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;test.js&lt;/code&gt; file and put it in a &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; folder. &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; (sometimes &lt;code class=&quot;highlighter-rouge&quot;&gt;lib&lt;/code&gt;) is your original code. We transpile stuff from &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; to the sibling &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Protip:&lt;/strong&gt; You transpile CSS (Sass, Stylus, LESS, PostCSS, etc.) and HTML (Pug/Jade, Haml, etc.) as well. Currently most companies organize this stuff as &lt;code class=&quot;highlighter-rouge&quot;&gt;src/css&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;src/js&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;src/html&lt;/code&gt;, etc. but I think &lt;a href=&quot;http://ecss.io/chapter5.html&quot;&gt;component architecture&lt;/a&gt; is a better solution for larger projects so try it out if you can.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now run &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin/babel src -d dist&lt;/code&gt; to ensure ES6/7 files in &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; are being transpiled to vanilla Javascript in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder.&lt;/li&gt;
+  &lt;li&gt;If you run &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin/babel -h&lt;/code&gt; you’ll see it has a watch flag.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin/babel -w src -d dist&lt;/code&gt; and change some stuff in &lt;code class=&quot;highlighter-rouge&quot;&gt;src/test.js&lt;/code&gt; to make sure it’s being transpiled on saves.&lt;/li&gt;
+  &lt;li&gt;Now… it’ll suck to have to type all that crap every time so add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;scripts&quot;&lt;/code&gt; object in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;dev&quot;&lt;/code&gt; then just run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; scripts don’t need the &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin/&lt;/code&gt; part).&lt;/li&gt;
+  &lt;li&gt;You can add/nest extra files in &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; and everything will work fine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; should look like this (if you copy this make sure you run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm i&lt;/code&gt; before using it):&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;babel-cli&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^6.10.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;babel-preset-es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^6.9.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;babel-preset-stage-0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^6.5.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;babel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;es2015&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stage-0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dev&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;babel -w src -d dist&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;congrats&quot;&gt;Congrats&lt;/h2&gt;
+
+&lt;p&gt;Now you’re able to use ES6/7. Not only that, but you’re using &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; scripts to perform tasks which is &lt;a href=&quot;http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/&quot;&gt;pretty nice&lt;/a&gt; as long as a CLI for a particular tool is available (if one isn’t, consider doing everyone a favor and &lt;a href=&quot;https://github.com/sindresorhus/meow&quot;&gt;making one&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Learn ES6/7. It’s awesome and will make your code much more elegant.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/learn-es2015/&quot;&gt;https://babeljs.io/docs/learn-es2015/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.2ality.com/&quot;&gt;http://www.2ality.com/&lt;/a&gt; (amazing tutorials)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Learn how to use &lt;a href=&quot;https://github.com/mysticatea/npm-run-all&quot;&gt;npm-run-all&lt;/a&gt; to watch/transpile Babel and Sass at the exact same time and consider completely replacing Gulp/Grunt with npm scripts.
+    &lt;ul&gt;
+      &lt;li&gt;Make Sass output source maps to &lt;code class=&quot;highlighter-rouge&quot;&gt;dist/css/maps&lt;/code&gt; folder.&lt;/li&gt;
+      &lt;li&gt;Make Sass build everything in &lt;code class=&quot;highlighter-rouge&quot;&gt;src/css&lt;/code&gt; before it watches.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://gist.github.com/corysimmons/80e206aba0e807df2ef6f9ab5fd25300&quot;&gt;Answer Gist&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 23 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2016/javascript/babel</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/babel</guid>
         
         
         <category>javascript</category>

@@ -168,11 +168,13 @@ abbr[title]
       generate-grid: sizes(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
       align-items: flex-start
 
-    > picture
-      display: block
+    > img
+      border-radius: 2px
+      margin-bottom: $sm
 
-      > img
-        border-radius: 1px
+      @media (max-width: $bp)
+        display: block
+        margin: auto
 
     > *
       margin-bottom: $sm
@@ -393,7 +395,10 @@ abbr[title]
     margin-top: $sm
     float: left
   > *:not(h1)
-    margin-bottom: 1.666666em
+    margin-bottom: $sm
+
+  h2, h3, h4, h5, h6
+    margin-top: $lg
 
   footer
     margin-top: $lg
@@ -447,3 +452,20 @@ pre
     border: none
     padding: none
     overflow-x: hidden
+
+blockquote
+  padding: $sm
+  background: darken(white, 2%)
+  border-left: 5px solid darken(white, 5%)
+
+  > *
+    &:last-child
+      margin-bottom: 0
+
+ul
+  ul
+    margin-left: 1em
+
+.post
+  li
+    margin-bottom: 5px

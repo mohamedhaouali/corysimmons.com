@@ -182,11 +182,15 @@ abbr[title]::after {
     align-items: flex-start;
   }
 }
-.page-home main > picture {
-  display: block;
+.page-home main > img {
+  border-radius: 2px;
+  margin-bottom: 30px;
 }
-.page-home main > picture > img {
-  border-radius: 1px;
+@media (max-width: 800px) {
+  .page-home main > img {
+    display: block;
+    margin: auto;
+  }
 }
 .page-home main > * {
   margin-bottom: 30px;
@@ -419,7 +423,14 @@ abbr[title]::after {
   float: left;
 }
 .post > *:not(h1) {
-  margin-bottom: 1.666666em;
+  margin-bottom: 30px;
+}
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  margin-top: 60px;
 }
 .post footer {
   margin-top: 60px;
@@ -483,4 +494,18 @@ pre code {
   border: none;
   padding: none;
   overflow-x: hidden;
+}
+blockquote {
+  padding: 30px;
+  background: #fafafa;
+  border-left: 5px solid #f2f2f2;
+}
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+ul ul {
+  margin-left: 1em;
+}
+.post li {
+  margin-bottom: 5px;
 }

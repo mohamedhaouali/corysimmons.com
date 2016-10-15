@@ -1,3 +1,2 @@
-- add blog posts
 - pdf resume
 - add speaking to frontpage
