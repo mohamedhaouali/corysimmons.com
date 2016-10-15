@@ -5,8 +5,8 @@
     <description>A frontend developer's portfolio and writings.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 Oct 2016 04:37:13 -0400</pubDate>
-    <lastBuildDate>Sat, 15 Oct 2016 04:37:13 -0400</lastBuildDate>
+    <pubDate>Sat, 15 Oct 2016 04:47:22 -0400</pubDate>
+    <lastBuildDate>Sat, 15 Oct 2016 04:47:22 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -214,6 +214,86 @@
         <pubDate>Thu, 23 Jun 2016 00:00:00 -0400</pubDate>
         <link>http://localhost:4000/writings/2016/javascript/babel</link>
         <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/babel</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>ESLint</title>
+        <description>&lt;p&gt;Linting is cool. It keeps people from making stupid mistakes and can make your code a lot neater/easier to read.&lt;/p&gt;
+
+&lt;p&gt;Not linting is how you end up with spaghetti code that no one can read.&lt;/p&gt;
+
+&lt;p&gt;Lint &lt;strong&gt;everything&lt;/strong&gt;. HTML, CSS, JS, Python, Ruby, PHP, etc.&lt;/p&gt;
+
+&lt;p&gt;ESLint lints JS really nicely.&lt;/p&gt;
+
+&lt;p&gt;There was JSHint and JSLint, but they were hard to extend so someone made a JS linter that was easy to extend called ESLint. It’s now the standard.&lt;/p&gt;
+
+&lt;p&gt;Agree with your team on a coding style. This part isn’t super important and there are a ton of well thought out configs out there already like &lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb&quot;&gt;AirBnB&lt;/a&gt;. What’s important is you all agree to do the same code style!&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-eslint&quot;&gt;How to use ESLint&lt;/h2&gt;
+
+&lt;p&gt;Use npm. It’s easy and portable.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/playgrounds/eslint&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo '{}' &amp;gt; package.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint&lt;/code&gt; (&lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#eslint-config-airbnb-1&quot;&gt;AirBnB usage&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I feel ya. All of these npm packages seem silly, but it’s the whole Unix philosophy of making everything modular. It’s a bit annoying, but overall it’s usually a good thing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At this point you could do something like &lt;code class=&quot;highlighter-rouge&quot;&gt;eslint --init&lt;/code&gt; to make an ESLint config file. In that file, you could add something like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;extends&quot;: &quot;airbnb&quot;&lt;/code&gt;, but that’s newb stuff. Do we really need &lt;strong&gt;yet another&lt;/strong&gt; config file?&lt;/li&gt;
+  &lt;li&gt;Do this instead: in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; add an &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;eslintConfig&quot;&lt;/code&gt; object with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;extends&quot;: &quot;airbnb&quot;&lt;/code&gt; in it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Protip:&lt;/strong&gt; If you’re configuring some npm package, see if you can put it in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; instead of having 20 config files polluting the root of your project.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now you could run &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin/eslint&lt;/code&gt; in terminal (and this is actually cool/useful for the &lt;code class=&quot;highlighter-rouge&quot;&gt;--fix&lt;/code&gt; flag), but you don’t want to be switching between terminal and editor after every keystroke to see if you made a mistake, so install an editor plugin for ESLint. Here’s &lt;a href=&quot;https://github.com/AtomLinter/linter-eslint&quot;&gt;Atom’s&lt;/a&gt;. ESLint is insanely popular so there is almost certainly a plugin for your editor.&lt;/li&gt;
+  &lt;li&gt;Restart your editor and type some sloppy, error-filled, JS. Your editor should light up like a Christmas tree.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-if-i-have-some-global-variables-jquery-doesnt-work-alert-is-throwing-an-error&quot;&gt;What if I have some global variables? jQuery doesn’t work! &lt;code class=&quot;highlighter-rouge&quot;&gt;alert()&lt;/code&gt; is throwing an error!&lt;/h2&gt;
+
+&lt;p&gt;Config it!&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;eslintConfig&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;extends&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;airbnb&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;env&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;no-alert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;congrats&quot;&gt;Congrats&lt;/h2&gt;
+
+&lt;p&gt;Now you’re linting your JS like a pro. Enjoy your impending OCD.&lt;/p&gt;
+
+&lt;h2 id=&quot;homework&quot;&gt;Homework&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Experiment with some other configs (&lt;a href=&quot;http://standardjs.com/&quot;&gt;standard&lt;/a&gt; is currently my favorite).&lt;/li&gt;
+  &lt;li&gt;Write your own config.&lt;/li&gt;
+  &lt;li&gt;Skim through the &lt;a href=&quot;http://eslint.org/docs/rules/&quot;&gt;rules&lt;/a&gt; and read what some of them do.&lt;/li&gt;
+  &lt;li&gt;Skim through some &lt;a href=&quot;http://eslint.org/docs/user-guide/configuring&quot;&gt;configuration options&lt;/a&gt; so when something breaks you might have an idea as to what’s wrong.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 22 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2016/javascript/eslint</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/javascript/eslint</guid>
         
         
         <category>javascript</category>
