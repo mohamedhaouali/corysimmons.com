@@ -5,9 +5,128 @@
     <description>A frontend developer's portfolio and writings.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 Oct 2016 13:01:11 -0400</pubDate>
-    <lastBuildDate>Sat, 15 Oct 2016 13:01:11 -0400</lastBuildDate>
+    <pubDate>Wed, 19 Oct 2016 12:29:08 -0400</pubDate>
+    <lastBuildDate>Wed, 19 Oct 2016 12:29:08 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Introducing Package Script Manager</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/corysimmons/package-script-manager&quot;&gt;https://github.com/corysimmons/package-script-manager&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I had been using npm scripts for a lot of little things, but never really saw it as a build tool until I read &lt;a href=&quot;https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/&quot;&gt;Keith Cirkel’s article&lt;/a&gt; on it.&lt;/p&gt;
+
+&lt;p&gt;There are some huge underlying points to that approach that never got the attention they deserved:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;This isn’t about npm or Make or XYZ. It’s about CLIs. CLIs are simply the most portable interface for a library. You can &lt;em&gt;easily&lt;/em&gt; wrap CLIs for use with &lt;em&gt;any&lt;/em&gt; task runner. You can even use CLIs without any sort of task runner.&lt;/li&gt;
+  &lt;li&gt;You can run npm tasks in a particular order, and/or in parallel with &lt;a href=&quot;https://www.npmjs.com/package/npm-run-all&quot;&gt;npm-run-all&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;You can watch any glob pattern for a variety of events using &lt;a href=&quot;https://github.com/kimmobrunfeldt/chokidar-cli&quot;&gt;Chokidar CLI&lt;/a&gt;. It also makes a few bash variables available &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;. You can use bash functions with that event, and operate on that path using tools like &lt;a href=&quot;https://linux.die.net/man/1/cut&quot;&gt;cut&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Those last two points were very common/invalid complaints about using npm scripts, but there are still a lot of valid complaints revolving around the use of JSON.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let me make this perfectly clear for any aspiring library authors: &lt;strong&gt;STOP USING THINGS LIKE YAML AND JSON FOR CONFIG!&lt;/strong&gt; The only reason static content should ever exist is when working with databases or state. Otherwise, assume your userbase isn’t full of toddlers and give them a power tool to explore interesting ways to config their projects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since npm scripts are tied up in JSON, there are lots of things you can’t do with them: comments, variables, etc. In fact, Keith’s article’s comment section is literally full of reasons why JSON configs suck.&lt;/p&gt;
+
+&lt;p&gt;So I made a thing that will import all the key/val pairs from a JS object to package.json &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;scripts&quot;&lt;/code&gt;. It does this destructively (any scripts you currently have in package.json will be overwritten) to force a single source of truth for your scripts.&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&quot;https://github.com/corysimmons/package-script-manager&quot;&gt;Package Script Manager&lt;/a&gt;. It’s a very simple CLI that destructively migrates a JS object from one file to &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;scripts&quot;&lt;/code&gt; object.&lt;/p&gt;
+
+&lt;p&gt;It works like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -D package-script-manager&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// psm.js&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;planet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Earth'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// This task should just echo 'Hello Earth!' to the terminal&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Hello ${planet}!'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;❗️ Next part is destructive and will discard whatever scripts you have in package.json. Make sure you migrate your package.json scripts to psm.js, and/or back them up somewhere until you’re comfortable with this workflow.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ node_modules/.bin/psm&lt;/code&gt; (need to run this from &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/.bin&lt;/code&gt; once to config some new tasks for it)&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// package.json&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;echo 'Hello Earth!'&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;psm&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;psm psm.js package.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;psm:watch&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;chokidar psm.js -c 'npm run psm'&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now you can use it with &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run psm&lt;/code&gt; (or &lt;code class=&quot;highlighter-rouge&quot;&gt;psm:watch&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Between &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-run-all&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;chokidar-cli&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;package-script-manager&lt;/code&gt;, you have all the power of any task runner out there, but the most important part is, now you are supporting CLI development as opposed to Gulp plugin development. Again, one of those things is insanely portable, and the other is specific to a single task runner. And if you’re going to write some sort of function for a build task, would you rather do it in a task runner’s plugin API, or just in plain Node?&lt;/p&gt;
+
+&lt;p&gt;Stop reading here if you like Webpack.&lt;/p&gt;
+
+&lt;p&gt;Where do tools like Webpack fit into this? They perform a separate function than task running. They mostly focus on something called “bundling”. In very plain/overly-simple terms, bundling just concatenates files (this triggers the React developer), and Webpack isn’t particularly good at it when compared to a forward-thinking bundler like Rollup.&lt;/p&gt;
+
+&lt;p&gt;Webpack is bad for the internet because it contributes to the JS-everything mindset – going as far as to import/insert CSS and imagery through JS (people without JS get absolutely nothing) in the name of HTTP request reduction. The minimize requests thing is now an anti-pattern carryover from HTTP1, but I’m already escaping the scope of this post so I’ll cover that more in a future post.&lt;/p&gt;
+
+&lt;p&gt;I’d suggest dumping Webpack for Rollup; just using it to eliminate useless code (unless you also need Node in the browser); and throwing that task into your npm scripts along with every other optimization task.&lt;/p&gt;
+
+&lt;p&gt;This approach, combined with comments, keeps a very clear separation of concerns. And with those few tools mentioned above, you can easily slap together a very easy-to-reason-about/powerful/extensible/portable task config.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// psm.js&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Easily alter your project structure&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;distDir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'dist'&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jsDist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;distDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/js&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`
+&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bundleName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bundle'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Compresses imagery once on startup, then runs other optimizations and the development server in parallel.&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// https://github.com/mysticatea/npm-run-all&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imagemin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rollup&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;chokidar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uglify&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brower&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Losslessly compress imagery https://github.com/imagemin/imagemin-cli&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// We could watch this with Chokidar, but I wanted to demonstrate you can perform tasks sequentially, as well as in parallel, very easily.&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;imagemin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imagemin&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/**/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;distDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Tree-shake JS https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// It will default to use the config in rollup.config.js (see? some people know JSON configs suck)&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;rollup&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rollup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jsDist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/${bundleName}.js`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,
+&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Uglify/minify JS https://github.com/mishoo/UglifyJS&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;uglify&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uglifyjs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jsDist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/${bundleName}.js -o ${jsDist}/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bundleName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Let's use Chokidar and run uglify everytime our JS bundle changes https://github.com/kimmobrunfeldt/chokidar-cli&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;chokidar:uglify&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chokidar&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jsDist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/${bundleName}.js -c 'npm run uglifyjs'`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,
+&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Fire up a really powerful dev server https://www.browsersync.io/docs/command-line&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Trigger more React devs: I hear Webpack's HMR is overrated from people who write books about Webpack.&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;browser-sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notify&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;distDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/**/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is untested pseudocode, but I’m pretty sure the biggest hiccup would be a typo or something.&lt;/p&gt;
+
+&lt;p&gt;Think about that for a second. I’m compressing all types of imagery; tree-shaking my JS; watching tree-shook code and uglifying it on change; and spinning up a dev server; with 6 lines of very readable, documented, code.&lt;/p&gt;
+
+&lt;p&gt;Gulp &amp;amp; Co. are dead. Long live CLIs.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2016/node/introducing-package-script-manager</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2016/node/introducing-package-script-manager</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
     
       <item>
         <title>Building a Simple Typechecker</title>

@@ -10,8 +10,12 @@ $golden = 1.618
 $c1 = #39526C
 $c2 = #B4C0CC
 
-$stack1 = Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif
+$stack1 = 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif
 $stack2 = Lora, Georgia, serif
+$stack3 = 'Droid Sans Mono for Powerline', 'Droid Sans Mono', Menlo, 'Source Code Pro for Powerline', 'Source Code Pro', 'Roboto Mono for Powerline', 'Roboto Mono', Hack, 'Fira Mono for Powerline', 'Fira Mono', 'Courier New', Courier, monospace, monospace, sans-serif
+
+code
+  font-family: $stack3
 
 trans($speed = 200ms)
   transition: all $speed ease-in-out
@@ -473,3 +477,28 @@ ul
 .highlight
   .err
     background: none
+
+// http://stackoverflow.com/a/21369918/175825
+ol
+  counter-reset: item
+
+  > li
+    padding: 0 0 0 1.5em
+    text-indent: -1.5em
+    list-style-type: none
+    counter-increment: item
+
+    &::before
+      display: inline-block
+      width: 1.5em
+      padding-right: 0.5em
+      font-weight: bold
+      text-align: right
+      content: counter(item) "."
+
+code
+  font-size: .85rem
+
+pre
+  code
+    font-size: .85rem

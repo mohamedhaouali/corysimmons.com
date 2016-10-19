@@ -1,6 +1,9 @@
 @import '../../src/css/reeeset/reeeset.min.css';
 @import 'https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700|Lora:400,700';
 @import '../../src/css/syntax-highlighting.css';
+code {
+  font-family: 'Droid Sans Mono for Powerline', 'Droid Sans Mono', Menlo, 'Source Code Pro for Powerline', 'Source Code Pro', 'Roboto Mono for Powerline', 'Roboto Mono', Hack, 'Fira Mono for Powerline', 'Fira Mono', 'Courier New', Courier, monospace, monospace, sans-serif;
+}
 main a,
 .post a {
   color: #517499;
@@ -55,7 +58,7 @@ p:last-of-type {
 :root {
   margin: 30px;
   color: #b4c0cc;
-  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
   line-height: 1.666666;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -169,7 +172,7 @@ abbr[title]::after {
   font-weight: 600;
 }
 .logo > span:nth-child(2) {
-  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.25em;
@@ -342,7 +345,7 @@ abbr[title]::after {
   margin-bottom: 30px;
 }
 .page-home .what-i-know h4 {
-  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -385,7 +388,7 @@ abbr[title]::after {
 }
 .page-writings h2 .date {
   display: block;
-  font-family: Istok Web, Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif;
+  font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
   font-size: 0.85rem;
   font-weight: normal;
   letter-spacing: 0.015em;
@@ -511,4 +514,27 @@ ul ul {
 }
 .highlight .err {
   background: none;
+}
+ol {
+  counter-reset: item;
+}
+ol > li {
+  padding: 0 0 0 1.5em;
+  text-indent: -1.5em;
+  list-style-type: none;
+  counter-increment: item;
+}
+ol > li::before {
+  display: inline-block;
+  width: 1.5em;
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-align: right;
+  content: counter(item) ".";
+}
+code {
+  font-size: 0.85rem;
+}
+pre code {
+  font-size: 0.85rem;
 }
