@@ -1,6 +1,9 @@
 @import '../../src/css/reeeset/reeeset.min.css';
 @import 'https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700|Lora:400,700';
 @import '../../src/css/syntax-highlighting.css';
+strong {
+  color: #4d5764;
+}
 code {
   font-family: 'Droid Sans Mono for Powerline', 'Droid Sans Mono', Menlo, 'Source Code Pro for Powerline', 'Source Code Pro', 'Roboto Mono for Powerline', 'Roboto Mono', Hack, 'Fira Mono for Powerline', 'Fira Mono', 'Courier New', Courier, monospace, monospace, sans-serif;
 }
@@ -57,7 +60,7 @@ p:last-of-type {
 }
 :root {
   margin: 30px;
-  color: #b4c0cc;
+  color: #606d7d;
   font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
   line-height: 1.666666;
   overflow-x: hidden;
@@ -111,7 +114,7 @@ nav > div > a {
   text-decoration: none;
   text-align: center;
   line-height: 50px;
-  background: #f0f2f5;
+  background: #dee2e6;
   display: block;
   margin-bottom: 2px;
   color: #39526c;
@@ -120,7 +123,7 @@ nav > div > a {
 }
 nav > div > a:hover,
 nav > div > a:active {
-  background: #e8ecf0;
+  background: #ced3d9;
 }
 @media (min-width: 800px) {
   nav > div > a {
@@ -128,7 +131,7 @@ nav > div > a:active {
     line-height: 1.333333;
     margin-left: 30px;
     font-size: 0.75rem;
-    color: #b4c0cc;
+    color: #606d7d;
     text-transform: uppercase;
   }
   nav > div > a:hover {
@@ -147,7 +150,7 @@ abbr[title] {
 abbr[title]::after {
   position: absolute;
   content: '';
-  border-bottom: 1px dotted #b4c0cc;
+  border-bottom: 1px dotted #606d7d;
   width: 100%;
   bottom: 2px;
   left: 0;
@@ -176,7 +179,7 @@ abbr[title]::after {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.25em;
-  color: #b4c0cc;
+  color: #606d7d;
   font-size: 0.85rem;
 }
 @media (min-width: 800px) {
@@ -249,9 +252,9 @@ abbr[title]::after {
   transform: translate3d(-50%, -100%, 0);
   bottom: -100%;
   border-radius: 2px;
-  background: #eceff2;
-  border: 1px solid #d6dce3;
-  color: #6f869d;
+  background: #d6dae0;
+  border: 1px solid #a5aeba;
+  color: #434c58;
   font-weight: bold;
   text-align: center;
   font-size: 10px;
@@ -314,7 +317,7 @@ abbr[title]::after {
 .page-home .worked-with,
 .page-home .written-for,
 .page-home .what-i-know {
-  border-top: 1px solid #e8ecf0;
+  border-top: 1px solid #ced3d9;
   padding-top: 60px;
 }
 .page-home .written-for h3 {
@@ -363,7 +366,7 @@ abbr[title]::after {
   background: #39526c;
 }
 .page-home progress[value]::-webkit-progress-bar {
-  background: #b4c0cc;
+  background: #606d7d;
 }
 @media (min-width: 800px) {
   .page-home .skills {
@@ -400,7 +403,7 @@ abbr[title]::after {
 .page-writings .pagination .next,
 .page-writings .pagination .previous {
   transition: all 200ms ease-in-out;
-  border: 2px solid rgba(180,192,204,0.3);
+  border: 2px solid rgba(96,109,125,0.3);
   padding: 10px 30px;
   text-decoration: none;
   border-radius: 2px;
@@ -411,15 +414,15 @@ abbr[title]::after {
 }
 .page-writings .pagination .next:hover,
 .page-writings .pagination .previous:hover {
-  border-color: rgba(180,192,204,0.45);
-  background: rgba(180,192,204,0.03);
+  border-color: rgba(96,109,125,0.45);
+  background: rgba(96,109,125,0.03);
 }
 .page-writings .pagination .previous {
   margin-right: 30px;
 }
 .post {
   padding-bottom: calc(50vh - 1.666666em - 60px);
-  color: #39526c;
+  color: #606d7d;
 }
 .post h1 {
   margin-top: 30px;
@@ -449,13 +452,14 @@ abbr[title]::after {
   margin-left: 30px;
   margin-top: -10px;
   font-weight: bold;
+  color: #39526c;
 }
 .post footer p > span > span {
   display: block;
   font-size: 0.85rem;
 }
 .post-date {
-  color: #b4c0cc;
+  color: #606d7d;
   width: 100%;
   clear: both;
   position: relative;
@@ -531,6 +535,7 @@ ol > li::before {
   font-weight: bold;
   text-align: right;
   content: counter(item) ".";
+  color: #4d5764;
 }
 code {
   font-size: 0.85rem;
