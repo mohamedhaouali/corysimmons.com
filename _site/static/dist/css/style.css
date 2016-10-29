@@ -406,7 +406,7 @@ abbr[title]::after {
   background: #39526c;
 }
 .page-home progress[value]::-webkit-progress-bar {
-  background: #606d7d;
+  background: #f2f2f2;
 }
 @media (min-width: 800px) {
   .page-home .skills {

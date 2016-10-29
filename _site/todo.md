@@ -1,2 +1,1 @@
-- pdf resume
 - add speaking to frontpage
