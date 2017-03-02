@@ -2,7 +2,7 @@
   "scripts": {
     "imagemin": "imagemin static/src/img/**/* -o static/dist/img",
     "start": "npm-run-all -p jekyll stylus postcss browser-sync chokidar:cssnano",
-    "jekyll": "jekyll serve",
+    "jekyll": "bundle exec jekyll serve",
     "browser-sync": "browser-sync start -p localhost:4000 --files='_site/**/*' --no-notify --no-open",
     "stylus": "stylus -w static/src/css/style.styl",
     "postcss": "postcss -w -u postcss-ant -u autoprefixer -o static/dist/css/style.css static/src/css/style.css",
