@@ -219,7 +219,7 @@ abbr[title]::after {
 @media (max-width: 800px) {
   .page-home main > img {
     display: block;
-    margin: auto;
+    margin: auto auto 30px;
   }
 }
 .page-home main > * {
