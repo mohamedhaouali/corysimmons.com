@@ -170,7 +170,7 @@ abbr[title]
 .page-home
   main
     @media (min-width: $bp)
-      generate-grid: sizes(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
+      generate-grid: columns(ratio($golden, 1) ratio($golden, 3)) gutter(60px)
       align-items: flex-start
 
     > img
@@ -262,6 +262,9 @@ abbr[title]
     max-width: 110px
     opacity: .75
 
+  .bethesda
+    max-width: 110px
+
   .scholastic
     max-width: 120px
 
@@ -341,7 +344,7 @@ abbr[title]
 
   .skills
     @media (min-width: $bp)
-      generate-grid: sizes(1/2 1/2) gutter(60px)
+      generate-grid: columns(1/2 1/2) gutter(60px)
 
   .skill
     p

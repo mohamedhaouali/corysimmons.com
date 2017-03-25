@@ -182,7 +182,7 @@ abbr[title]::after {
 }
 @media (min-width: 800px) {
   .page-home main {
-    generate-grid: sizes(ratio(1.618, 1) ratio(1.618, 3)) gutter(60px);
+    generate-grid: columns(ratio(1.618, 1) ratio(1.618, 3)) gutter(60px);
     align-items: flex-start;
   }
 }
@@ -286,6 +286,9 @@ abbr[title]::after {
   max-width: 110px;
   opacity: 0.75;
 }
+.page-home .bethesda {
+  max-width: 110px;
+}
 .page-home .scholastic {
   max-width: 120px;
 }
@@ -368,7 +371,7 @@ abbr[title]::after {
 }
 @media (min-width: 800px) {
   .page-home .skills {
-    generate-grid: sizes(0.5 0.5) gutter(60px);
+    generate-grid: columns(0.5 0.5) gutter(60px);
   }
 }
 .page-home .skill p:last-of-type {
