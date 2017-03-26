@@ -8,13 +8,15 @@ code {
   font-family: 'Droid Sans Mono for Powerline', 'Droid Sans Mono', Menlo, 'Source Code Pro for Powerline', 'Source Code Pro', 'Roboto Mono for Powerline', 'Roboto Mono', Hack, 'Fira Mono for Powerline', 'Fira Mono', 'Courier New', Courier, monospace, monospace, sans-serif;
 }
 main a,
-.post a {
+.post a,
+.portfolio-list a {
   color: #517499;
   text-decoration: none;
   position: relative;
 }
 main a::after,
-.post a::after {
+.post a::after,
+.portfolio-list a::after {
   transition: all 200ms ease-in-out;
   content: '';
   position: absolute;
@@ -27,7 +29,8 @@ main a::after,
   z-index: -1;
 }
 main a:hover::after,
-.post a:hover::after {
+.post a:hover::after,
+.portfolio-list a:hover::after {
   opacity: 0.5;
   max-width: 50%;
   transform: translate3d(50%, 0, 0);
@@ -543,4 +546,23 @@ code {
 }
 pre code {
   font-size: 0.85rem;
+}
+.portfolio-list {
+  margin-left: 20px;
+  list-style: square;
+}
+.portfolio-list li {
+  margin-bottom: 10px;
+}
+.portfolio-list a {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-list a::before {
+  content: attr(desc);
+  position: absolute;
+  left: calc(100% + 10px);
+  width: 999px;
+  font-size: 12px;
+  color: #b3b3b3;
 }
