@@ -7,27 +7,21 @@ title: Home
   <img src="static/dist/img/cory-simmons-speaking.png" alt="Picture of Cory. 6 foot 2 inches, light-brown hair, blue eyes, black thick-framed glasses, black North Face windbreaker jacket, jeans. Bookshelf full of random books behind him.">
 
   <div>
-    <div class="intro">
-      <p>
-        This site was designed with a golden ratio grid using a <a href="https://github.com/corysimmons/postcss-ant" target="_blank">PostCSS layout plugin</a> I made that mimics much of CSS Grid Spec but works seamlessly in IE9; developed with Jekyll because the billion static-site generators made me dizzy 🤕; and deployed to Netlify (SSL, HTTP2 &amp; CDN perf).
-      </p>
-    </div>
-
     <div class="what-i-know">
       <h3>Pertinent Skills</h3>
 
-      <div class="skills">
+      <div class="skills" id="masonry">
         <div class="skill">
           <h4>HTML</h4>
 
           <progress value="90" max="100"></progress>
 
           <p>
-            I could use some more work on ARIA roles, <a href="https://schema.org/" target="_blank">microdata</a>, localStorage, but I'm generally pretty good at this.
+            I could use some more work on ARIA roles, <a href="https://schema.org/" target="_blank">microdata</a>, localStorage, but I'm generally very good at HTML.
           </p>
 
           <p>
-            I understand semantic markup and actually have a <a href="https://github.com/corysimmons/boy" target="_blank">lightweight spin-off</a> of HTML boilerplate that works well with a plethora of browsers.
+            I understand semantic markup and actually have a <a href="https://github.com/corysimmons/boy" target="_blank">lightweight HTML boilerplate</a> with a <a href="https://github.com/corysimmons/boy-npm" target="_blank">CLI</a> that works well with a plethora of browsers by default (saves a lot of time on browser testing).
           </p>
         </div>
 
@@ -37,7 +31,19 @@ title: Home
           <progress value="95" max="100"></progress>
 
           <p>
-            I have a really deep knowledge of CSS, preprocessors, and PostCSS.
+            I'm insane at CSS, preprocessors, and PostCSS. This sounds like a silly skill to brag about, but bulletproof CSS architecture is a really valuable skill to have.
+          </p>
+
+          <p>
+            <b>Example #1:</b> Reflow is one of the most <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/" target="_blank">annoying things</a> in the universe and a problem to this day. I created a <a href="https://github.com/corysimmons/intrinsic" target="_blank">mixin</a> that fixes it.
+          </p>
+
+          <p>
+            <b>Example #2:</b> Redesigning a production site without breaking anything is <i>very</i> difficult. I did it on a monumental codebase with <a href="https://teespring.com" target="_blank">Teespring</a>.
+          </p>
+
+          <p>
+            <b>Example #3:</b> Browser support. Everyone gets this wrong and when they try to fix one browser, they break things in another. Someone well-versed in CSS is familiar with a lot of common gotchas and can save a lot of time by avoiding them. I can literally write a dozen more ROI examples upon request.
           </p>
 
           <p>
@@ -45,21 +51,25 @@ title: Home
           </p>
 
           <p>
-            I've read and understand most CSS architectures (SMACSS, BEM, ECSS). Unpopular opinion, but I think Atomic CSS is the most interesting and misunderstood concept in CSS in the past several years.
+            I've read and understand most CSS architectures (SMACSS, BEM, ECSS). I also know CSS Modules are the best thing ever.
           </p>
         </div>
 
         <div class="skill">
           <h4>JavaScript</h4>
 
-          <progress value="80" max="100"></progress>
+          <progress value="85" max="100"></progress>
 
           <p>
             I'm good at jQuery, vanilla JavaScript, AJAX, and consuming APIs.
           </p>
 
           <p>
-            I know ES6+; functional concepts like mapping, reducing, etc.; promise usage to avoid pyramids of doom; some design patterns; code style with ESLint (StandardJS is currently my favorite flavor); strong typing with Flow/TypeScript; and modularizing code with imports/exports.
+            I know <a href="https://github.com/corysimmons/postcss-ant" target="_blank">ES6+</a>; functional concepts like mapping, reducing, etc.; promise usage to avoid pyramids of doom; some design patterns; code style with ESLint &amp; Prettier (StandardJS is currently my favorite flavor); strong typing with Flow/TypeScript; and modularizing code with imports/exports.
+          </p>
+
+          <p>
+            🚨 I won't be able to pass your "Explain how prototypal inheritance and <code>this</code> binding works." I've studied it and could probably explain it if you put me on the spot, but I forget it and still bump into it in weird places from time-to-time.
           </p>
         </div>
 
@@ -69,7 +79,7 @@ title: Home
           <progress value="40" max="100"></progress>
 
           <p>
-            I've been studying React.js <i>a lot</i> lately.
+            I've been studying React.js and Vue <i>a lot</i> lately.
           </p>
 
           <p>
@@ -77,7 +87,7 @@ title: Home
           </p>
 
           <p>
-            I need to work on some real projects to thoroughly grok it.
+            I'm excited to finally master one of these.
           </p>
         </div>
 
@@ -87,11 +97,11 @@ title: Home
           <progress value="75" max="100"></progress>
 
           <p>
-            I've built a lot of custom tools with Node. It's one of my favorite things to do. I'm very familiar with the API and at least know what standard libs to search through for answers to particular questions.
+            I've built <b>a lot</b> of custom stuff with Node. It's one of my favorite things to do. I'm very familiar with the API and at least know what standard libs to search through for answers to particular questions.
           </p>
 
           <p>
-            I've used streams and spun up HTTP servers/CRUD APIs with Express, but I wouldn't consider myself super comfortable with them yet.
+            I've used streams and spun up simple HTTP servers/CRUD APIs with Express, but I wouldn't consider myself super comfortable with them yet.
           </p>
         </div>
 
@@ -112,25 +122,25 @@ title: Home
         <div class="skill">
           <h4>Rails, Django, Laravel</h4>
 
-          <progress value="25" max="100"></progress>
+          <progress value="35" max="100"></progress>
 
           <p>
             I've studied the languages underneath these frameworks, and have worked on a few professional projects with Rails and Django, but wouldn't consider myself proficient in these.
           </p>
 
           <p>
-            I understand the concepts behind them (MVC, OOP, etc.), but just don't have a ton of real-world experience doing backend development.
+            I'm currently very interested in Laravel just because it has some nice official tools. I'm just using it to grok working with ActiveRecord in an OOP environment.
           </p>
 
           <p>
-            I'm really interested in building APIs with some of these technologies and consuming them with React.
+            I grok most of the cooncepts. I just need to sit down and build a few things with it.
           </p>
         </div>
 
         <div class="skill">
           <h4>Design</h4>
 
-          <progress value="75" max="100"></progress>
+          <progress value="80" max="100"></progress>
 
           <p>
             I started my career doing design. It comes pretty naturally to me. I'm comfortable in Photoshop, Illustrator, and Sketch--pretty much any Adobe CC product comes easily to me (I've tinkered with After Effects).
@@ -141,7 +151,7 @@ title: Home
           </p>
 
           <p>
-            I have a lot of knowledge of typography, general design concepts (things like the rule of thirds, contrast and flow, etc.) and I'm especially good at mixing code with design to do things like work with ratios.
+            I have a lot of knowledge of typography, general design concepts (things like the rule of thirds, contrast and flow, etc.) and I'm especially good at <a href="https://dribbble.com/corysimmons" target="_blank">mixing code with design</a> to do things like work with ratios.
           </p>
         </div>
       </div>

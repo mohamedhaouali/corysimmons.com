@@ -68,13 +68,13 @@ p:last-of-type {
   line-height: 1.666666;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 @media (min-width: 800px) {
   :root {
     margin: 60px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 body {
@@ -319,8 +319,7 @@ abbr[title]::after {
 .page-home .built,
 .page-home .uses-work,
 .page-home .worked-with,
-.page-home .written-for,
-.page-home .what-i-know {
+.page-home .written-for {
   border-top: 1px solid #ced3d9;
   padding-top: 60px;
 }
@@ -353,13 +352,13 @@ abbr[title]::after {
 }
 .page-home .what-i-know h4 {
   font-family: 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-bottom: 5px;
 }
 .page-home .what-i-know p {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 .page-home progress {
   appearance: none;
@@ -374,7 +373,17 @@ abbr[title]::after {
 }
 @media (min-width: 800px) {
   .page-home .skills {
-    generate-grid: columns(0.5 0.5) gutter(60px);
+    generate-grid: columns(0.5 0.5) gutter(60px) technique(negative-margin);
+  }
+}
+.page-home .skill {
+  padding-bottom: $md;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 30px;
+}
+@media (min-width: 800px) {
+  .page-home .skill {
+    margin-bottom: 0;
   }
 }
 .page-home .skill p:last-of-type {
