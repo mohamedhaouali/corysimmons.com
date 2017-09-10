@@ -4,6 +4,8 @@ title: WP Components
 categories: php
 ---
 
+> **Update:** Updated codebase for this approach [https://github.com/corysimmons/wp-comp](https://github.com/corysimmons/wp-comp)
+
 [Jump to the code](#introducing-wp-components)
 
 I've recently been working on a WordPress project where the client wanted to reuse existing content in different contexts. For instance, a blog feed listing that might appear on its own page, but would also appear on the homepage.

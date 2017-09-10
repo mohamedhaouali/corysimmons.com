@@ -5,13 +5,124 @@
     <description>A frontend developer's portfolio and writings.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Aug 2017 00:37:08 -0400</pubDate>
-    <lastBuildDate>Thu, 03 Aug 2017 00:37:08 -0400</lastBuildDate>
+    <pubDate>Sun, 10 Sep 2017 01:17:09 -0400</pubDate>
+    <lastBuildDate>Sun, 10 Sep 2017 01:17:09 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
+        <title>Dialectics, Master/Slave, and Breaking the Cycle</title>
+        <description>&lt;p&gt;Random things I’m thinking about. No particular order or association from topic to topic. Isolated and into the air. A rant’s rant I hope might help someone, or my future self.&lt;/p&gt;
+
+&lt;h2 id=&quot;mankind-is-fucked&quot;&gt;Mankind is Fucked&lt;/h2&gt;
+
+&lt;p&gt;We’re a fragile species:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If the lights go off tomorrow because of a solar storm, billions die.&lt;/li&gt;
+  &lt;li&gt;If a couple world leaders’ egos get the best of them and someone launches a nuke, billions die.&lt;/li&gt;
+  &lt;li&gt;Viruses, global warming, asteroids, etc., billions die.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What’s wrong with us as a species?&lt;/p&gt;
+
+&lt;p&gt;Is it our selfish gene? Is our evolution a ticking time bomb? Are we just too stupid to figure out how to just &lt;strong&gt;&lt;em&gt;be&lt;/em&gt;&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;Kinda, kinda, and kinda.&lt;/p&gt;
+
+&lt;p&gt;We evolved to steal off our neighbor’s plate. They starved and died; our selfish gene survived.&lt;/p&gt;
+
+&lt;p&gt;This actually worked really well, forever, but now things are a bit different. Our species has advanced in technology to the point where we can destroy ourselves pretty easily. And we’ve grown in population to the point where we’ll eventually need to tell people they have to limit the amount of children they have. In lieu of self-imposed child limitations the super wealthy will cull the herd.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I’m aware these sound like the rants of a paranoid madman, but you have to really try to understand that you’re &lt;em&gt;just stupid&lt;/em&gt;. If you think our species isn’t facing some genuine dire straits in the next decade or two, then please direct yourself to YouTube Trending and wait.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Still with me?&lt;/p&gt;
+
+&lt;h2 id=&quot;dialectics-and-modernismpostmodernism&quot;&gt;Dialectics and Modernism/Postmodernism&lt;/h2&gt;
+
+&lt;p&gt;Dialectics is a fancy word from philosophy that basically means debating and trying to reach the real truth of the matter. Lawyers, academics, and some scientists do it.&lt;/p&gt;
+
+&lt;p&gt;It basically means you take your personal biases and ego out of the discussion. Just use &lt;a href=&quot;https://www.youtube.com/watch?v=JBjAyrX7wms&amp;amp;list=PLKI1h_nAkaQq5MDWlKXu0jeZmLDt-51on&quot;&gt;logic&lt;/a&gt; and be very critical of science.&lt;/p&gt;
+
+&lt;p&gt;Why not science? Most science is &lt;a href=&quot;http://www.npr.org/sections/thesalt/2015/05/28/410313446/why-a-journalist-scammed-the-media-into-spreading-bad-chocolate-science&quot;&gt;bullshit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Over 70% of science &lt;a href=&quot;https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970&quot;&gt;can’t be replicated&lt;/a&gt;. I’m aware of the irony of using a scientific report to discredit the validity of science, but I anecdotally witness bad science being used to promote bad ideas daily so it’s definitely a problem.&lt;/p&gt;
+
+&lt;p&gt;Science even fails us in programming. Tests make results easily reproducible, but don’t tell the whole story. For the whole story you need persons with intimate knowledge of the problem, like Google’s #TeamPerf, to &lt;a href=&quot;https://github.com/reddit/reddit-mobile/issues/247&quot;&gt;destroy your reality&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Insanely interesting:&lt;/strong&gt; In order for Google’s group of wealthy, SanFran hipster, superstars to even see the problem, they had to cosplay poor people. They had to throttle their network connections and processing speed to levels only seen by the vast majority of humans.&lt;/p&gt;
+
+&lt;p&gt;The conclusion I hope you’ll draw from this is, the art of science isn’t bullshit. It just takes someone who thoroughly, thoroughly, understands the problem, to be able to break it down into tiny (quantum anyone?), digestible, pieces for would-be debaters. Kurzgesagt’s &lt;a href=&quot;https://www.youtube.com/user/Kurzgesagt&quot;&gt;YouTube channel&lt;/a&gt; does this really well and makes complex topics like universal heat death palatable to laymen.&lt;/p&gt;
+
+&lt;p&gt;In lieu of being or having an expert, just default to logic. At least that way, if you mess up, you’ll have a record to work from.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-very-real-modern-masterslave&quot;&gt;The Very Real Modern Master/Slave&lt;/h2&gt;
+
+&lt;p&gt;Imagine you get a job as a chef in a fancy restaurant. The restaurant owners (the masters in this example) make a ton of money off your work, and pay you (the slave) slightly above minimum wage. After a few years of working there, you have gained a ton of skills. Meanwhile, the master has been playing on their yacht, not learning anything.&lt;/p&gt;
+
+&lt;p&gt;One day you leave the restaurant and create your own restaurant down the street. Which restaurant will stay open?&lt;/p&gt;
+
+&lt;p&gt;We, designers/programmers, have been taken over by old capitalists. How?&lt;/p&gt;
+
+&lt;p&gt;If we don’t have a full-time job:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can’t pay bills.&lt;/li&gt;
+  &lt;li&gt;We have to eat Ramen every single day.&lt;/li&gt;
+  &lt;li&gt;Our significant others drop us like bad habits. Ahem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So we choose to play ball. We sign whatever contract. We wake up early and commute hours every day (for literally no reason). We bend the knee to people who would destroy our visions. We build things mankind doesn’t need, for people we don’t respect, so we can survive.&lt;/p&gt;
+
+&lt;p&gt;But… We’re evolving. A year ago I could barely do any backend, now I’m developing APIs, auth/role systems from scratch, and completely grok a lot of patterns. I know this is laughable to some of you, but the point is, I’m getting better while the masters play. One day, I will stop bending the knee and become a master of my own. This is how my master became a master, and his master before him.&lt;/p&gt;
+
+&lt;h2 id=&quot;breaking-the-cycle&quot;&gt;Breaking the Cycle&lt;/h2&gt;
+
+&lt;p&gt;Old heads, enslaved by the system already: don’t become masters. Instead, teach young people. You’ll die way before you put a dent in the system, but you &lt;em&gt;can&lt;/em&gt; empower and educate on ethics (keeping their ego/greed in check) an entire generation to hopefully fix things before our species wipes itself out.&lt;/p&gt;
+
+&lt;p&gt;Young heads, full of ego, waiting to become slaves: drop the ego, work/study hard, like… day-and-night until you pass out hard. And hopefully create your own business. Stick with it if you do. You’ll learn and get better.&lt;/p&gt;
+
+&lt;p&gt;Contrary to the bad rap Auschwitz gave &lt;a href=&quot;https://en.wikipedia.org/wiki/Arbeit_macht_frei&quot;&gt;this motto&lt;/a&gt;, working hard and making money actually will set you free (i.e. &lt;a href=&quot;https://www.mrmoneymustache.com/&quot;&gt;retire when you’re 30&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;This means you will have plenty of time from 30 through the-time-you-die to solve some of the problems facing the entire species, and to help others (makes you feel good).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus:&lt;/strong&gt; It also means you can get a 8+ significant other within a couple years of starting. People are attracted to upward trajectories and nothing screams upward trajectory like working your ass off.&lt;/p&gt;
+
+&lt;p&gt;Caveat: s/he may, or may not, be ride-or-die which may, or may not, be significant to you. If this is significant to you (it probably shouldn’t be as it can be chalked up to evolution), just bail on the entire idea and focus on helping the species (I have more thoughts on this “utility for mankind’s survival” thing I’ll detail in a future blog post, but I’m pretty sure it’s a good goal to work towards in the interim).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-perfect-outfit-youthful-sublation&quot;&gt;The Perfect Outfit: Youthful Sublation&lt;/h2&gt;
+
+&lt;p&gt;A company built by young people who haven’t been forced to bend the knee yet (see: still live with their parents).&lt;/p&gt;
+
+&lt;p&gt;Half of this building is a work area. The other half is an apartment without bills. Workers, particularly those with families, can live off-site.&lt;/p&gt;
+
+&lt;p&gt;Modern examples of this are universities, where students can live in dorms. But instead of the university being paid and subsequently keeping the vast majority of money, the company is worker-owned. Everyone is an equal and has equal input on who stays/goes, on where money is spent on infrastructure and expanding.&lt;/p&gt;
+
+&lt;p&gt;In such a company, there is no ego, just friends trying to solve the same problems and all growing in every field rather than specializing and being silo’d/weakened.&lt;/p&gt;
+
+&lt;p&gt;Such a company would produce meaningful products while developing a real pride in their community, not just empty jingoism.&lt;/p&gt;
+
+&lt;p&gt;I think such a place might be nice to work, but such a place can’t exist because of selfishness parading as ego.&lt;/p&gt;
+
+&lt;p&gt;Disagree with anything? Happy to hear your thoughts and maybe evolve mine.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Sep 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/writings/2017/rant/random-1</link>
+        <guid isPermaLink="true">http://localhost:4000/writings/2017/rant/random-1</guid>
+        
+        
+        <category>rant</category>
+        
+      </item>
+    
+      <item>
         <title>WP Components</title>
-        <description>&lt;p&gt;&lt;a href=&quot;#introducing-wp-components&quot;&gt;Jump to the code&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; Updated codebase for this approach &lt;a href=&quot;https://github.com/corysimmons/wp-comp&quot;&gt;https://github.com/corysimmons/wp-comp&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;#introducing-wp-components&quot;&gt;Jump to the code&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve recently been working on a WordPress project where the client wanted to reuse existing content in different contexts. For instance, a blog feed listing that might appear on its own page, but would also appear on the homepage.&lt;/p&gt;
 
