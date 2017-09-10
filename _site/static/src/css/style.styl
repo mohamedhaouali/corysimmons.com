@@ -11,7 +11,7 @@ $c1 = #39526C
 $c2 = mix(mix(#B4C0CC, #445263), #445263)
 
 $stack1 = 'Istok Web', 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif
-$stack2 = Lora, Georgia, serif
+$stack2 = $stack1
 $stack3 = 'Droid Sans Mono for Powerline', 'Droid Sans Mono', Menlo, 'Source Code Pro for Powerline', 'Source Code Pro', 'Roboto Mono for Powerline', 'Roboto Mono', Hack, 'Fira Mono for Powerline', 'Fira Mono', 'Courier New', Courier, monospace, monospace, sans-serif
 
 strong
@@ -212,7 +212,7 @@ abbr[title]
       margin: ($sm / 2)
 
       @media (min-width: $bp)
-        margin: 0 $lg $sm 0
+        margin: 0 $sm $sm 0
 
     a
       &::after
@@ -291,9 +291,12 @@ abbr[title]
     h3
       margin-bottom: $sm
 
-  .uses-work, .worked-with, .written-for
-    border-top: 1px solid lighten($c2, 70%)
-    padding-top: $lg
+
+  .built, .uses-work, .worked-with, .written-for
+    border: 2px solid lighten($c2, 80%)
+    padding: 45px 45px 15px
+    margin-bottom: 30px
+    border-radius: 5px
 
   .written-for
     h3
